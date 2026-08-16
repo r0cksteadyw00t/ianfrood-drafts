@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Ian Frood — Version A</title>
+
+<style>
+:root{
+  --paper:#EDEAE3; --paper-2:#F7F5F0; --ink:#22201C; --ink-2:#605B52;
+  --line:#C9C2B4; --accent:#7A5C31; --brass:#B08A4A;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#16150F; --paper-2:#1F1D17; --ink:#EDEAE1; --ink-2:#9E988C;
+    --line:#3B372D; --accent:#CBA46A; --brass:#CBA46A;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#16150F; --paper-2:#1F1D17; --ink:#EDEAE1; --ink-2:#9E988C;
+  --line:#3B372D; --accent:#CBA46A; --brass:#CBA46A;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Helvetica Neue",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  font-size:clamp(1rem,.96rem + .2vw,1.06rem);line-height:1.68;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+.vbadge{position:fixed;top:0;left:0;z-index:9;background:var(--accent);color:var(--paper);
+  font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;padding:.45rem .9rem}
+.wrap{max-width:72rem;margin-inline:auto;padding-inline:clamp(1.5rem,5vw,4.5rem)}
+.eyebrow{margin:0;font-size:.64rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--accent)}
+
+.hero{padding-block:clamp(4rem,9vw,7rem) clamp(3rem,6vw,4.5rem)}
+.hero-grid{display:grid;gap:clamp(2.5rem,5vw,4.5rem);grid-template-columns:1fr;align-items:center}
+@media(min-width:60rem){.hero-grid{grid-template-columns:1.08fr .92fr}}
+.wordmark{margin:1.25rem 0 0;font-weight:200;font-size:clamp(2.4rem,7.5vw,4.4rem);
+  line-height:1;letter-spacing:.1em;text-transform:uppercase}
+.invite{margin:clamp(1.5rem,3.5vw,2.25rem) 0 0;max-width:19ch;
+  font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.6rem,4.4vw,2.9rem);
+  line-height:1.14;text-wrap:balance}
+.hero p.intro{margin:1.5rem 0 0;max-width:46ch;color:var(--ink-2)}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin:2rem 0 0;padding:0;list-style:none;
+  font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2)}
+.tags li{display:flex;align-items:center;gap:.7rem}
+.tags li::before{content:"";width:16px;height:1px;background:var(--brass)}
+.hero img{width:100%;aspect-ratio:4/5;object-fit:cover}
+
+section{padding-block:clamp(3.5rem,7vw,5.5rem);border-top:1px solid var(--line)}
+.sec-title{margin:.9rem 0 0;font-weight:400;font-size:clamp(1.5rem,3.6vw,2.4rem);
+  line-height:1.12;font-family:Georgia,"Times New Roman",serif;max-width:22ch;text-wrap:balance}
+.sec-body{margin:1.25rem 0 0;max-width:56ch;color:var(--ink-2)}
+
+.find{display:grid;gap:clamp(1.5rem,3vw,2.5rem);grid-template-columns:1fr;margin-top:clamp(2.25rem,4vw,3rem)}
+@media(min-width:48rem){.find{grid-template-columns:repeat(3,1fr)}}
+.find article{border-top:2px solid var(--brass);padding-top:1.25rem}
+.find h3{margin:0 0 .5rem;font-weight:400;font-size:1.2rem;font-family:Georgia,"Times New Roman",serif}
+.find p{margin:0;font-size:.92rem;color:var(--ink-2)}
+
+.split{display:grid;gap:clamp(2rem,4vw,3.5rem);grid-template-columns:1fr;align-items:center;margin-top:clamp(2rem,4vw,3rem)}
+@media(min-width:56rem){.split{grid-template-columns:1fr 1fr}}
+.split img{width:100%;aspect-ratio:3/2;object-fit:cover}
+
+.who{display:grid;gap:1.25rem 2.5rem;grid-template-columns:1fr;margin-top:2.25rem;padding:0;list-style:none}
+@media(min-width:44rem){.who{grid-template-columns:repeat(3,1fr)}}
+.who li{border-top:1px solid var(--line);padding-top:1rem;font-family:Georgia,"Times New Roman",serif;font-size:1.12rem}
+.who span{display:block;margin-top:.35rem;font-family:inherit;font-size:.85rem;color:var(--ink-2);font-family:"Helvetica Neue",Arial,sans-serif}
+
+.contact{display:grid;gap:1.6rem 2.5rem;grid-template-columns:1fr 1fr;margin:2.25rem 0 0}
+@media(min-width:44rem){.contact{grid-template-columns:repeat(4,1fr)}}
+.contact dt{margin:0 0 .35rem;font-size:.62rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+.contact dd{margin:0;font-size:.94rem;line-height:1.5;overflow-wrap:anywhere}
+a{color:inherit}
+.contact a{text-decoration:none;border-bottom:1px solid var(--line)}
+.contact a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.cta{display:inline-block;margin-top:2.25rem;padding:1rem 1.75rem;background:var(--ink);color:var(--paper);
+  text-decoration:none;font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase}
+.cta:hover{background:var(--accent)}
+footer{border-top:1px solid var(--line);padding-block:2.5rem;font-size:.7rem;letter-spacing:.05em;color:var(--ink-2)}
+a:focus-visible,.cta:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+</style>
+</head>
+<body>
+
+
+<div class="vbadge">Version A · The Invitation</div>
+
+<header class="hero wrap">
+  <div class="hero-grid">
+    <div>
+      <p class="eyebrow">Port Melbourne &middot; Est. Melbourne</p>
+      <h1 class="wordmark">Ian Frood</h1>
+      <p class="invite">Come and see what all the fuss is about.</p>
+      <p class="intro">Our studio is where the collections live — Jakob Schlaepfer's fabrics and wallcoverings, Buchheister hardware, and our own exclusive cloth, woven grasses and bamboos. Bring a project and we will find the wow for it.</p>
+      <ul class="tags">
+        <li>Trade only</li>
+        <li>By appointment</li>
+        <li>Australia-wide</li>
+      </ul>
+      <a class="cta" href="mailto:info@ianfrood.com.au?subject=Studio%20presentation">Book a presentation</a>
+    </div>
+    <figure><img src="../images/hero.jpg" alt="Heavy unlined linen curtain breaking onto a concrete floor."></figure>
+  </div>
+</header>
+
+<main>
+  <section class="wrap">
+    <p class="eyebrow">What you'll find</p>
+    <h2 class="sec-title">Hundreds of designs, and one or two that stop people.</h2>
+    <div class="find">
+      <article>
+        <h3>The Ian Frood collection</h3>
+        <p>Our own exclusive cloth — Woven Naturals in grasses, reeds and bamboo, a Japanese <em>sudare</em> range, grass cloths, and linens from Belgium and Italy.</p>
+      </article>
+      <article>
+        <h3>Jakob Schlaepfer</h3>
+        <p>The St. Gallen atelier whose creations have graced the catwalks of leading fashion houses. Fabrics, wallcoverings and the annual Interior capsule. We are the Australian agents.</p>
+      </article>
+      <article>
+        <h3>Buchheister</h3>
+        <p>Curtain hardware made in Germany, including the Round series. Quiet engineering for cloth that deserves it.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="split">
+      <figure><img src="../images/schlaepfer.jpg" alt="Lengths of fine Jakob Schlaepfer organza hung in grey, lilac, citron and blush."></figure>
+      <div>
+        <p class="eyebrow">In the studio</p>
+        <h2 class="sec-title">We love watching people react to this collection, as they would to art.</h2>
+        <p class="sec-body">Ian travels each year to Heimtextil, Maison &amp; Objet and Déco Off, and to St. Gallen to see how Schlaepfer's creations are made. What comes home goes on display in Port Melbourne, where we host presentations for practices and their teams.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <p class="eyebrow">Who we work with</p>
+    <h2 class="sec-title">Projects that ask for something next level.</h2>
+    <ul class="who">
+      <li>Architects<span>Specification support, samples and technical detail for projects anywhere in Australia.</span></li>
+      <li>Interior designers &amp; decorators<span>Cuttings, studio time with the collections, and a workroom that makes to your drawings.</span></li>
+      <li>Residential &amp; commercial<span>From a single bay window to a whole building, made by our crew in Port Melbourne.</span></li>
+    </ul>
+  </section>
+
+  <section class="wrap">
+    <p class="eyebrow">Come in</p>
+    <h2 class="sec-title">The studio is open by appointment.</h2>
+    <dl class="contact">
+      <div><dt>Studio</dt><dd>16 Network Drive<br>Port Melbourne VIC 3207</dd></div>
+      <div><dt>Telephone</dt><dd><a href="tel:+61396997153">(03) 9699 7153</a></dd></div>
+      <div><dt>Email</dt><dd><a href="mailto:info@ianfrood.com.au">info@ianfrood.com.au</a></dd></div>
+      <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/ianfrood/">@ianfrood</a></dd></div>
+    </dl>
+  </section>
+</main>
+
+<footer class="wrap">Ian Frood is a trading name of Scarlett Atelier Pty Ltd &middot; ABN 68 687 514 398</footer>
+
+</body>
+</html>

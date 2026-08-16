@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Ian Frood — Version B</title>
+
+<style>
+:root{
+  --paper:#141312; --paper-2:#1C1A18; --ink:#EFEDE8; --ink-2:#A29C93;
+  --line:#33302B; --accent:#C9A468; --brass:#C9A468;
+}
+:root[data-theme="light"]{
+  --paper:#141312; --paper-2:#1C1A18; --ink:#EFEDE8; --ink-2:#A29C93;
+  --line:#33302B; --accent:#C9A468; --brass:#C9A468;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Helvetica Neue",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  font-size:clamp(1rem,.96rem + .2vw,1.05rem);line-height:1.66;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+.vbadge{position:fixed;top:0;left:0;z-index:9;background:var(--accent);color:var(--paper);
+  font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;padding:.45rem .9rem}
+.wrap{max-width:76rem;margin-inline:auto;padding-inline:clamp(1.5rem,5vw,4rem)}
+.eyebrow{margin:0;font-size:.62rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--accent)}
+
+.masthead{padding-block:clamp(4.5rem,10vw,8rem) clamp(2.5rem,5vw,4rem);text-align:center}
+.wordmark{margin:1.5rem 0 0;font-weight:200;font-size:clamp(2.6rem,9vw,6rem);
+  line-height:1;letter-spacing:.16em;text-transform:uppercase}
+.tagline{margin:1.5rem auto 0;max-width:40ch;color:var(--ink-2);font-size:1.02rem}
+.rule{height:1px;background:var(--line);margin-top:clamp(2.5rem,5vw,4rem)}
+
+.collections{padding-block:clamp(3rem,6vw,4.5rem)}
+.coll{display:grid;gap:clamp(1.5rem,4vw,3.5rem);grid-template-columns:1fr;align-items:center;
+  padding-block:clamp(2.25rem,5vw,3.5rem);border-bottom:1px solid var(--line)}
+@media(min-width:56rem){
+  .coll{grid-template-columns:.95fr 1.05fr}
+  .coll.flip .txt{order:-1}
+}
+.coll img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.coll.wide img{aspect-ratio:3/2}
+.coll .origin{margin:0 0 .55rem;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-2)}
+.coll h2{margin:0;font-weight:400;font-size:clamp(1.6rem,3.8vw,2.5rem);line-height:1.08;
+  font-family:Georgia,"Times New Roman",serif}
+.coll p{margin:1.1rem 0 0;max-width:48ch;color:var(--ink-2)}
+.spec{margin:1.5rem 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.45rem .5rem}
+.spec li{border:1px solid var(--line);padding:.4rem .8rem;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+
+.made{padding-block:clamp(3.5rem,7vw,5.5rem);border-bottom:1px solid var(--line)}
+.made-grid{display:grid;gap:1.5rem 3rem;grid-template-columns:1fr;margin-top:2rem}
+@media(min-width:44rem){.made-grid{grid-template-columns:repeat(4,1fr)}}
+.made-grid div{border-top:1px solid var(--line);padding-top:1rem}
+.made-grid b{display:block;font-weight:400;font-size:1.1rem;font-family:Georgia,"Times New Roman",serif}
+.made-grid span{display:block;margin-top:.3rem;font-size:.82rem;color:var(--ink-2)}
+
+.closing{padding-block:clamp(3.5rem,7vw,5.5rem)}
+.closing h2{margin:.9rem 0 0;font-weight:400;font-size:clamp(1.5rem,3.6vw,2.3rem);
+  font-family:Georgia,"Times New Roman",serif;max-width:24ch;line-height:1.14}
+.contact{display:grid;gap:1.6rem 2.5rem;grid-template-columns:1fr 1fr;margin:2.25rem 0 0}
+@media(min-width:44rem){.contact{grid-template-columns:repeat(4,1fr)}}
+.contact dt{margin:0 0 .35rem;font-size:.6rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+.contact dd{margin:0;font-size:.93rem;line-height:1.5;overflow-wrap:anywhere}
+a{color:inherit}
+.contact a{text-decoration:none;border-bottom:1px solid var(--line)}
+.contact a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.cta{display:inline-block;margin-top:2rem;padding:1rem 1.75rem;border:1px solid var(--accent);color:var(--accent);
+  text-decoration:none;font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase}
+.cta:hover{background:var(--accent);color:var(--paper)}
+footer{border-top:1px solid var(--line);padding-block:2.5rem;font-size:.68rem;color:var(--ink-2)}
+a:focus-visible,.cta:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+</style>
+</head>
+<body>
+
+
+<div class="vbadge">Version B · The Collections</div>
+
+<header class="masthead wrap">
+  <p class="eyebrow">Trade only &middot; Port Melbourne</p>
+  <h1 class="wordmark">Ian Frood</h1>
+  <p class="tagline">Makers of artisanal window furnishings, and Australian agents for Jakob Schlaepfer. The collections below are held in our studio and available to the trade.</p>
+  <div class="rule"></div>
+</header>
+
+<main class="collections wrap">
+
+  <article class="coll">
+    <figure><img src="../images/work-06.jpg" alt="Close detail of an open-weave natural fibre cloth."></figure>
+    <div class="txt">
+      <p class="origin">Our own collection</p>
+      <h2>Woven Naturals</h2>
+      <p>Hundreds of unique designs, woven from grasses, reeds and bamboos. Full of the knots, imperfections and colour variations that natural fibre gives you — the living quality you cannot get from anything mass produced.</p>
+      <ul class="spec"><li>Grass weave</li><li>Grass cloth</li><li>Reed</li><li>Bamboo</li></ul>
+    </div>
+  </article>
+
+  <article class="coll flip">
+    <figure><img src="../images/work-02.jpg" alt="Japanese bamboo sudare blind edged in dark grosgrain binding."></figure>
+    <div class="txt">
+      <p class="origin">Our own collection &middot; Japan</p>
+      <h2>Sudare</h2>
+      <p>Our signature Japanese bamboo, selected for grain and strength and woven with a discipline honed over generations. We craft these screens into bespoke blinds — a living surface that elevates a space through textural purity and refined simplicity.</p>
+      <ul class="spec"><li>Bespoke blinds</li><li>Hand finished</li></ul>
+    </div>
+  </article>
+
+  <article class="coll wide">
+    <figure><img src="../images/schlaepfer.jpg" alt="Lengths of fine Jakob Schlaepfer organza hung in grey, lilac, citron and blush."></figure>
+    <div class="txt">
+      <p class="origin">St. Gallen, Switzerland &middot; since 1904</p>
+      <h2>Jakob Schlaepfer</h2>
+      <p>The St. Gallen atelier provides boundless wonder, whimsy and inspiration to couturiers, architects and fabric enthusiasts around the world; its creations have graced the catwalks of leading fashion houses. We are the Australian agents, and hold the collection — including each year's Interior capsule — for viewing in Melbourne.</p>
+      <ul class="spec"><li>Fabrics</li><li>Wallcoverings</li><li>Metallics</li><li>Lace</li><li>Interior capsule</li></ul>
+    </div>
+  </article>
+
+  <article class="coll flip">
+    <figure><img src="../images/work-04.jpg" alt="A single length of pale green silk sheer falling in soft folds."></figure>
+    <div class="txt">
+      <p class="origin">Belgium &middot; Italy</p>
+      <h2>Frood exclusives</h2>
+      <p>Linens from Belgium, and curtain fabrics from our weavers in Italy — including the fil coupé that had our crew swooning. Silk sheers, heavy unlined linens, and cloth chosen because it does something no substitute will.</p>
+      <ul class="spec"><li>Linen</li><li>Silk</li><li>Sheers</li><li>Fil coupé</li></ul>
+    </div>
+  </article>
+
+  <article class="coll">
+    <figure><img src="../images/work-03.jpg" alt="Heavy linen curtain breaking on a concrete sill with a coastal view beyond."></figure>
+    <div class="txt">
+      <p class="origin">Sundern, Germany</p>
+      <h2>Buchheister hardware</h2>
+      <p>Curtain hardware made in Germany. Less is more with the Round series — pure simplicity, and the engineering that lets good cloth hang the way it should.</p>
+      <ul class="spec"><li>Tracks</li><li>Poles</li><li>Round series</li></ul>
+    </div>
+  </article>
+
+</main>
+
+<section class="made wrap">
+  <p class="eyebrow">Made by our crew</p>
+  <div class="made-grid">
+    <div><b>Curtains</b><span>Hand-finished headings, sewn in the Port Melbourne workroom.</span></div>
+    <div><b>Sheers</b><span>Layered, or on their own where the light does the work.</span></div>
+    <div><b>Blinds</b><span>Roman, roller and woven naturals, pattern matched and installed.</span></div>
+    <div><b>Awnings</b><span>External and conservatory, as a specialist Markilux dealer.</span></div>
+  </div>
+</section>
+
+<section class="closing wrap">
+  <p class="eyebrow">Enquiries</p>
+  <h2>Bring us a project and we will find the wow for it.</h2>
+  <a class="cta" href="mailto:info@ianfrood.com.au?subject=Trade%20enquiry">Request cuttings</a>
+  <dl class="contact">
+    <div><dt>Studio</dt><dd>16 Network Drive<br>Port Melbourne VIC 3207</dd></div>
+    <div><dt>Telephone</dt><dd><a href="tel:+61396997153">(03) 9699 7153</a></dd></div>
+    <div><dt>Email</dt><dd><a href="mailto:info@ianfrood.com.au">info@ianfrood.com.au</a></dd></div>
+    <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/ianfrood/">@ianfrood</a></dd></div>
+  </dl>
+</section>
+
+<footer class="wrap">Ian Frood is a trading name of Scarlett Atelier Pty Ltd &middot; ABN 68 687 514 398</footer>
+
+</body>
+</html>
