@@ -34,7 +34,18 @@ img{max-width:100%;display:block}
 a.tb-item{color:var(--ink);border-bottom:1px solid var(--line);white-space:nowrap}
 a.tb-item:hover{color:var(--accent);border-bottom-color:var(--accent)}
 .tb-status{margin-left:auto;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);white-space:nowrap}
-@media(max-width:56rem){.tb-status{margin-left:0;width:100%}.topbar-in{font-size:.78rem;gap:.35rem .9rem}.tb-addr{width:100%}}
+@media(max-width:56rem){
+  /* not sticky on small screens - a 120px bar permanently on screen costs
+     more than it gives. It stays at the top, it just scrolls away. */
+  .topbar{position:static}
+  .topbar-in{font-size:.8rem;gap:.3rem .9rem;padding-block:.6rem}
+  .tb-status{margin-left:0;width:100%;order:5}
+  .tb-addr{width:100%;order:4}
+  .tb-name{order:2}
+  .vbadge{order:1}
+  /* 44px minimum touch target */
+  a.tb-item{order:3;padding-block:.6rem;display:inline-block}
+}
 .wrap{max-width:68rem;margin-inline:auto;padding-inline:clamp(1.5rem,5vw,4rem)}
 .eyebrow{margin:0;font-size:.64rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--accent)}
 
