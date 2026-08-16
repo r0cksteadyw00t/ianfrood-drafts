@@ -26,8 +26,15 @@ body{margin:0;background:var(--paper);color:var(--ink);
   font-family:"Helvetica Neue",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
   font-size:clamp(1rem,.96rem + .2vw,1.06rem);line-height:1.68;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
-.vbadge{position:fixed;top:0;left:0;z-index:9;background:var(--accent);color:var(--paper);
-  font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;padding:.45rem .9rem}
+.topbar{border-bottom:1px solid var(--line);background:var(--paper);position:sticky;top:0;z-index:20}
+.topbar-in{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem 1.2rem;padding-block:.75rem;font-size:.8rem}
+.vbadge{background:var(--accent);color:var(--paper);font-size:.54rem;letter-spacing:.18em;text-transform:uppercase;padding:.28rem .6rem;white-space:nowrap}
+.tb-name{font-size:.66rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap}
+.tb-item{color:var(--ink-2);text-decoration:none}
+a.tb-item{color:var(--ink);border-bottom:1px solid var(--line);white-space:nowrap}
+a.tb-item:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.tb-status{margin-left:auto;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);white-space:nowrap}
+@media(max-width:56rem){.tb-status{margin-left:0;width:100%}.topbar-in{font-size:.78rem;gap:.35rem .9rem}.tb-addr{width:100%}}
 .wrap{max-width:72rem;margin-inline:auto;padding-inline:clamp(1.5rem,5vw,4.5rem)}
 .eyebrow{margin:0;font-size:.64rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--accent)}
 
@@ -83,7 +90,16 @@ a:focus-visible,.cta:focus-visible{outline:2px solid var(--accent);outline-offse
 <body>
 
 
-<div class="vbadge">Version A · The Invitation</div>
+<div class="topbar">
+  <div class="wrap topbar-in">
+    <span class="vbadge">Version A &middot; The Invitation</span>
+    <span class="tb-name">Ian Frood</span>
+    <span class="tb-item tb-addr">16 Network Drive, Port Melbourne VIC 3207</span>
+    <a class="tb-item" href="tel:+61396997153">(03) 9699 7153</a>
+    <a class="tb-item" href="mailto:info@ianfrood.com.au">info@ianfrood.com.au</a>
+    <span class="tb-status">Trade only &middot; By appointment</span>
+  </div>
+</div>
 
 <header class="hero wrap">
   <div class="hero-grid">
