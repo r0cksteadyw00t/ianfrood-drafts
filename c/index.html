@@ -7,9 +7,14 @@
 <title>Ian Frood — Version C</title>
 
 <style>
+@font-face{font-family:'AdventPro';src:url('../fonts/advent-pro-300.woff2') format('woff2');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'AdventPro';src:url('../fonts/advent-pro-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'AdventPro';src:url('../fonts/advent-pro-500.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'AdventPro';src:url('../fonts/advent-pro-italic-400.woff2') format('woff2');font-weight:400;font-style:italic;font-display:swap}
 :root{
   --paper:#F2EFE8; --paper-2:#FBFAF6; --ink:#1F1D19; --ink-2:#615B51;
   --line:#CFC7B7; --accent:#6E5326; --brass:#A8853F;
+  --brand:'AdventPro','Futura Classic',Futura,'Century Gothic','Segoe UI',system-ui,sans-serif;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
@@ -23,7 +28,7 @@
 }
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);
-  font-family:"Helvetica Neue",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  font-family:var(--brand);
   font-size:clamp(1rem,.96rem + .2vw,1.06rem);line-height:1.7;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 .topbar{border-bottom:1px solid var(--line);background:var(--paper);position:sticky;top:0;z-index:20}
@@ -56,7 +61,7 @@ a.tb-item:hover{color:var(--accent);border-bottom-color:var(--accent)}
 .wordmark{margin:1.25rem 0 0;font-weight:200;font-size:clamp(2.4rem,8vw,4.8rem);
   line-height:1;letter-spacing:.1em;text-transform:uppercase}
 .lede{margin:clamp(1.5rem,3.5vw,2.25rem) 0 0;max-width:26ch;
-  font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.4rem,3.8vw,2.4rem);line-height:1.2;text-wrap:balance}
+  font-family:var(--brand);font-size:clamp(1.4rem,3.8vw,2.4rem);line-height:1.2;text-wrap:balance}
 .hero p.intro{margin:1.5rem 0 0;max-width:50ch;color:var(--ink-2)}
 .strip{display:grid;gap:clamp(.6rem,1.4vw,1rem);grid-template-columns:repeat(2,1fr);margin-top:clamp(2.5rem,5vw,3.5rem)}
 @media(min-width:52rem){.strip{grid-template-columns:repeat(4,1fr)}}
@@ -64,22 +69,22 @@ a.tb-item:hover{color:var(--accent);border-bottom-color:var(--accent)}
 
 section{padding-block:clamp(3.25rem,6.5vw,5rem);border-top:1px solid var(--line)}
 .sec-title{margin:.9rem 0 0;font-weight:400;font-size:clamp(1.5rem,3.6vw,2.4rem);line-height:1.14;
-  font-family:Georgia,"Times New Roman",serif;max-width:24ch;text-wrap:balance}
+  font-family:var(--brand);max-width:24ch;text-wrap:balance}
 .sec-body{margin:1.25rem 0 0;max-width:56ch;color:var(--ink-2)}
 .pull{margin:clamp(2rem,4vw,3rem) 0 0;max-width:34ch;
-  font-family:Georgia,"Times New Roman",serif;font-style:italic;
+  font-family:var(--brand);font-style:italic;
   font-size:clamp(1.2rem,3vw,1.7rem);line-height:1.35;color:var(--ink)}
 
 .steps{margin:2.25rem 0 0;padding:0;list-style:none;display:grid;gap:0;grid-template-columns:1fr;border-top:1px solid var(--line)}
 @media(min-width:44rem){.steps{grid-template-columns:1fr 1fr;column-gap:clamp(2rem,5vw,4rem)}}
 .steps li{border-bottom:1px solid var(--line);padding:1.15rem 0}
-.steps b{display:block;font-weight:400;font-size:1.15rem;font-family:Georgia,"Times New Roman",serif}
+.steps b{display:block;font-weight:400;font-size:1.15rem;font-family:var(--brand)}
 .steps span{display:block;margin-top:.3rem;font-size:.86rem;color:var(--ink-2);line-height:1.55}
 
 .houses{display:grid;gap:1.75rem 3rem;grid-template-columns:1fr;margin-top:2.25rem}
 @media(min-width:48rem){.houses{grid-template-columns:repeat(3,1fr)}}
 .houses div{border-top:1px solid var(--line);padding-top:1rem}
-.houses b{display:block;font-weight:400;font-size:1.12rem;font-family:Georgia,"Times New Roman",serif}
+.houses b{display:block;font-weight:400;font-size:1.12rem;font-family:var(--brand)}
 .houses span{display:block;margin-top:.35rem;font-size:.86rem;color:var(--ink-2)}
 
 .contact{display:grid;gap:1.6rem 2.5rem;grid-template-columns:1fr 1fr;margin:2.25rem 0 0}
@@ -94,6 +99,18 @@ a{color:inherit}
 .cta:hover{background:var(--accent)}
 footer{border-top:1px solid var(--line);padding-block:2.5rem;font-size:.7rem;color:var(--ink-2)}
 a:focus-visible,.cta:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wordmark img,.tb-logo img{height:auto;display:block}
+.logo-white{display:none}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .logo-ink{display:none}
+  :root:not([data-theme="light"]) .logo-white{display:block}
+}
+:root[data-theme="dark"] .logo-ink{display:none}
+:root[data-theme="dark"] .logo-white{display:block}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wordmark{line-height:0}
+.wordmark img{width:clamp(10rem,38vw,17rem)}
+.tb-logo img{width:6.5rem}
 </style>
 </head>
 <body>
@@ -102,7 +119,7 @@ a:focus-visible,.cta:focus-visible{outline:2px solid var(--accent);outline-offse
 <div class="topbar">
   <div class="wrap topbar-in">
     <span class="vbadge">Version C &middot; The Workroom</span>
-    <span class="tb-name">Ian Frood</span>
+    <span class="tb-logo"><img class="logo-ink" src="../images/logo-ink.png" width="436" height="121" alt="Ian Frood"><img class="logo-white" src="../images/logo-white.png" width="436" height="121" alt="" aria-hidden="true"></span>
     <span class="tb-item tb-addr">16 Network Drive, Port Melbourne VIC 3207</span>
     <a class="tb-item" href="tel:+61396997153">(03) 9699 7153</a>
     <a class="tb-item" href="mailto:info@ianfrood.com.au">info@ianfrood.com.au</a>
@@ -113,7 +130,11 @@ a:focus-visible,.cta:focus-visible{outline:2px solid var(--accent);outline-offse
 <header class="hero wrap">
   <div class="railed">
     <p class="eyebrow">The Frood workroom &middot; Port Melbourne</p>
-    <h1 class="wordmark">Ian Frood</h1>
+    <h1 class="wordmark">
+      <span class="vh">Ian Frood</span>
+      <img class="logo-ink" src="../images/logo-ink.png" width="436" height="121" alt="Ian Frood">
+      <img class="logo-white" src="../images/logo-white.png" width="436" height="121" alt="" aria-hidden="true">
+    </h1>
     <p class="lede">Made by our crew, one small thing at a time.</p>
     <p class="intro">Everything we sell is made here. Curtains, sheers and blinds, cut and sewn and finished by hand in Port Melbourne, for architects and designers whose projects ask for something next level.</p>
   </div>
@@ -151,11 +172,11 @@ a:focus-visible,.cta:focus-visible{outline:2px solid var(--accent);outline-offse
   <section class="wrap">
     <div class="railed">
       <p class="eyebrow">The cloth we hold</p>
-      <h2 class="sec-title">Our own collection, and two houses we represent.</h2>
+      <h2 class="sec-title">Our own collection, and the houses we represent.</h2>
       <div class="houses">
-        <div><b>Ian Frood collection</b><span>Woven Naturals in grasses, reeds and bamboo, Japanese <em>sudare</em>, grass cloths, and linens from Belgium and Italy.</span></div>
-        <div><b>Jakob Schlaepfer</b><span>St. Gallen since 1904. Fabrics and wallcoverings at couture level. We are the Australian agents.</span></div>
-        <div><b>Buchheister</b><span>Curtain hardware made in Germany, including the Round series.</span></div>
+        <div><b>Our own collection</b><span>Woven Naturals in grasses, reeds and bamboo, Japanese <em>sudare</em>, grass cloths, and linens from Belgium and Italy.</span></div>
+        <div><b>Houses we represent</b><span>Jakob Schlaepfer of St. Gallen, G P &amp; J Baker, and weavers in Belgium and Italy.</span></div>
+        <div><b>Hardware &amp; awnings</b><span>Buchheister curtain hardware, made in Germany, and Markilux external and conservatory awnings.</span></div>
       </div>
     </div>
   </section>

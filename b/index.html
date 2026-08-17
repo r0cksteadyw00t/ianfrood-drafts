@@ -7,9 +7,14 @@
 <title>Ian Frood — Version B</title>
 
 <style>
+@font-face{font-family:'AdventPro';src:url('../fonts/advent-pro-300.woff2') format('woff2');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'AdventPro';src:url('../fonts/advent-pro-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'AdventPro';src:url('../fonts/advent-pro-500.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'AdventPro';src:url('../fonts/advent-pro-italic-400.woff2') format('woff2');font-weight:400;font-style:italic;font-display:swap}
 :root{
   --paper:#141312; --paper-2:#1C1A18; --ink:#EFEDE8; --ink-2:#A29C93;
   --line:#33302B; --accent:#C9A468; --brass:#C9A468;
+  --brand:'AdventPro','Futura Classic',Futura,'Century Gothic','Segoe UI',system-ui,sans-serif;
 }
 :root[data-theme="light"]{
   --paper:#141312; --paper-2:#1C1A18; --ink:#EFEDE8; --ink-2:#A29C93;
@@ -17,7 +22,7 @@
 }
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);
-  font-family:"Helvetica Neue",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  font-family:var(--brand);
   font-size:clamp(1rem,.96rem + .2vw,1.05rem);line-height:1.66;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 .topbar{border-bottom:1px solid var(--line);background:var(--paper);position:sticky;top:0;z-index:20}
@@ -60,7 +65,7 @@ a.tb-item:hover{color:var(--accent);border-bottom-color:var(--accent)}
 .coll.wide img{aspect-ratio:3/2}
 .coll .origin{margin:0 0 .55rem;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-2)}
 .coll h2{margin:0;font-weight:400;font-size:clamp(1.6rem,3.8vw,2.5rem);line-height:1.08;
-  font-family:Georgia,"Times New Roman",serif}
+  font-family:var(--brand)}
 .coll p{margin:1.1rem 0 0;max-width:48ch;color:var(--ink-2)}
 .spec{margin:1.5rem 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.45rem .5rem}
 .spec li{border:1px solid var(--line);padding:.4rem .8rem;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
@@ -69,12 +74,12 @@ a.tb-item:hover{color:var(--accent);border-bottom-color:var(--accent)}
 .made-grid{display:grid;gap:1.5rem 3rem;grid-template-columns:1fr;margin-top:2rem}
 @media(min-width:44rem){.made-grid{grid-template-columns:repeat(4,1fr)}}
 .made-grid div{border-top:1px solid var(--line);padding-top:1rem}
-.made-grid b{display:block;font-weight:400;font-size:1.1rem;font-family:Georgia,"Times New Roman",serif}
+.made-grid b{display:block;font-weight:400;font-size:1.1rem;font-family:var(--brand)}
 .made-grid span{display:block;margin-top:.3rem;font-size:.82rem;color:var(--ink-2)}
 
 .closing{padding-block:clamp(3.5rem,7vw,5.5rem)}
 .closing h2{margin:.9rem 0 0;font-weight:400;font-size:clamp(1.5rem,3.6vw,2.3rem);
-  font-family:Georgia,"Times New Roman",serif;max-width:24ch;line-height:1.14}
+  font-family:var(--brand);max-width:24ch;line-height:1.14}
 .contact{display:grid;gap:1.6rem 2.5rem;grid-template-columns:1fr 1fr;margin:2.25rem 0 0}
 @media(min-width:44rem){.contact{grid-template-columns:repeat(4,1fr)}}
 .contact dt{margin:0 0 .35rem;font-size:.6rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
@@ -87,6 +92,18 @@ a{color:inherit}
 .cta:hover{background:var(--accent);color:var(--paper)}
 footer{border-top:1px solid var(--line);padding-block:2.5rem;font-size:.68rem;color:var(--ink-2)}
 a:focus-visible,.cta:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wordmark img,.tb-logo img{height:auto;display:block}
+.logo-white{display:none}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .logo-ink{display:none}
+  :root:not([data-theme="light"]) .logo-white{display:block}
+}
+:root[data-theme="dark"] .logo-ink{display:none}
+:root[data-theme="dark"] .logo-white{display:block}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wordmark{line-height:0}
+.wordmark img{width:clamp(10rem,38vw,17rem)}
+.tb-logo img{width:6.5rem}
 </style>
 </head>
 <body>
@@ -95,7 +112,7 @@ a:focus-visible,.cta:focus-visible{outline:2px solid var(--accent);outline-offse
 <div class="topbar">
   <div class="wrap topbar-in">
     <span class="vbadge">Version B &middot; The Collections</span>
-    <span class="tb-name">Ian Frood</span>
+    <span class="tb-logo"><img class="logo-ink" src="../images/logo-ink.png" width="436" height="121" alt="Ian Frood"><img class="logo-white" src="../images/logo-white.png" width="436" height="121" alt="" aria-hidden="true"></span>
     <span class="tb-item tb-addr">16 Network Drive, Port Melbourne VIC 3207</span>
     <a class="tb-item" href="tel:+61396997153">(03) 9699 7153</a>
     <a class="tb-item" href="mailto:info@ianfrood.com.au">info@ianfrood.com.au</a>
@@ -105,8 +122,12 @@ a:focus-visible,.cta:focus-visible{outline:2px solid var(--accent);outline-offse
 
 <header class="masthead wrap">
   <p class="eyebrow">Trade only &middot; Port Melbourne</p>
-  <h1 class="wordmark">Ian Frood</h1>
-  <p class="tagline">Makers of artisanal window furnishings, and Australian agents for Jakob Schlaepfer. The collections below are held in our studio and available to the trade.</p>
+  <h1 class="wordmark">
+      <span class="vh">Ian Frood</span>
+      <img class="logo-ink" src="../images/logo-ink.png" width="436" height="121" alt="Ian Frood">
+      <img class="logo-white" src="../images/logo-white.png" width="436" height="121" alt="" aria-hidden="true">
+    </h1>
+  <p class="tagline">Makers of artisanal window furnishings. The collections below are held in our studio and available to the trade.</p>
   <div class="rule"></div>
 </header>
 
@@ -132,12 +153,12 @@ a:focus-visible,.cta:focus-visible{outline:2px solid var(--accent);outline-offse
     </div>
   </article>
 
-  <article class="coll wide">
+  <article class="coll">
     <figure><img src="../images/schlaepfer.jpg" alt="Lengths of fine Jakob Schlaepfer organza hung in grey, lilac, citron and blush."></figure>
     <div class="txt">
       <p class="origin">St. Gallen, Switzerland &middot; since 1904</p>
       <h2>Jakob Schlaepfer</h2>
-      <p>The St. Gallen atelier provides boundless wonder, whimsy and inspiration to couturiers, architects and fabric enthusiasts around the world; its creations have graced the catwalks of leading fashion houses. We are the Australian agents, and hold the collection — including each year's Interior capsule — for viewing in Melbourne.</p>
+      <p>Fabrics and wallcoverings from the St. Gallen atelier, including each year's Interior capsule. We are the Australian agents and hold the collection for viewing in Melbourne.</p>
       <ul class="spec"><li>Fabrics</li><li>Wallcoverings</li><li>Metallics</li><li>Lace</li><li>Interior capsule</li></ul>
     </div>
   </article>

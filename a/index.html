@@ -7,9 +7,14 @@
 <title>Ian Frood — Version A</title>
 
 <style>
+@font-face{font-family:'AdventPro';src:url('../fonts/advent-pro-300.woff2') format('woff2');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'AdventPro';src:url('../fonts/advent-pro-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'AdventPro';src:url('../fonts/advent-pro-500.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'AdventPro';src:url('../fonts/advent-pro-italic-400.woff2') format('woff2');font-weight:400;font-style:italic;font-display:swap}
 :root{
   --paper:#EDEAE3; --paper-2:#F7F5F0; --ink:#22201C; --ink-2:#605B52;
   --line:#C9C2B4; --accent:#7A5C31; --brass:#B08A4A;
+  --brand:'AdventPro','Futura Classic',Futura,'Century Gothic','Segoe UI',system-ui,sans-serif;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
@@ -23,7 +28,7 @@
 }
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);
-  font-family:"Helvetica Neue",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  font-family:var(--brand);
   font-size:clamp(1rem,.96rem + .2vw,1.06rem);line-height:1.68;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 .topbar{border-bottom:1px solid var(--line);background:var(--paper);position:sticky;top:0;z-index:20}
@@ -55,7 +60,7 @@ a.tb-item:hover{color:var(--accent);border-bottom-color:var(--accent)}
 .wordmark{margin:1.25rem 0 0;font-weight:200;font-size:clamp(2.4rem,7.5vw,4.4rem);
   line-height:1;letter-spacing:.1em;text-transform:uppercase}
 .invite{margin:clamp(1.5rem,3.5vw,2.25rem) 0 0;max-width:19ch;
-  font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.6rem,4.4vw,2.9rem);
+  font-family:var(--brand);font-size:clamp(1.6rem,4.4vw,2.9rem);
   line-height:1.14;text-wrap:balance}
 .hero p.intro{margin:1.5rem 0 0;max-width:46ch;color:var(--ink-2)}
 .tags{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin:2rem 0 0;padding:0;list-style:none;
@@ -66,13 +71,13 @@ a.tb-item:hover{color:var(--accent);border-bottom-color:var(--accent)}
 
 section{padding-block:clamp(3.5rem,7vw,5.5rem);border-top:1px solid var(--line)}
 .sec-title{margin:.9rem 0 0;font-weight:400;font-size:clamp(1.5rem,3.6vw,2.4rem);
-  line-height:1.12;font-family:Georgia,"Times New Roman",serif;max-width:22ch;text-wrap:balance}
+  line-height:1.12;font-family:var(--brand);max-width:22ch;text-wrap:balance}
 .sec-body{margin:1.25rem 0 0;max-width:56ch;color:var(--ink-2)}
 
 .find{display:grid;gap:clamp(1.5rem,3vw,2.5rem);grid-template-columns:1fr;margin-top:clamp(2.25rem,4vw,3rem)}
 @media(min-width:48rem){.find{grid-template-columns:repeat(3,1fr)}}
 .find article{border-top:2px solid var(--brass);padding-top:1.25rem}
-.find h3{margin:0 0 .5rem;font-weight:400;font-size:1.2rem;font-family:Georgia,"Times New Roman",serif}
+.find h3{margin:0 0 .5rem;font-weight:400;font-size:1.2rem;font-family:var(--brand)}
 .find p{margin:0;font-size:.92rem;color:var(--ink-2)}
 
 .split{display:grid;gap:clamp(2rem,4vw,3.5rem);grid-template-columns:1fr;align-items:center;margin-top:clamp(2rem,4vw,3rem)}
@@ -81,8 +86,8 @@ section{padding-block:clamp(3.5rem,7vw,5.5rem);border-top:1px solid var(--line)}
 
 .who{display:grid;gap:1.25rem 2.5rem;grid-template-columns:1fr;margin-top:2.25rem;padding:0;list-style:none}
 @media(min-width:44rem){.who{grid-template-columns:repeat(3,1fr)}}
-.who li{border-top:1px solid var(--line);padding-top:1rem;font-family:Georgia,"Times New Roman",serif;font-size:1.12rem}
-.who span{display:block;margin-top:.35rem;font-family:inherit;font-size:.85rem;color:var(--ink-2);font-family:"Helvetica Neue",Arial,sans-serif}
+.who li{border-top:1px solid var(--line);padding-top:1rem;font-family:var(--brand);font-size:1.12rem}
+.who span{display:block;margin-top:.35rem;font-family:inherit;font-size:.85rem;color:var(--ink-2);font-family:var(--brand)}
 
 .contact{display:grid;gap:1.6rem 2.5rem;grid-template-columns:1fr 1fr;margin:2.25rem 0 0}
 @media(min-width:44rem){.contact{grid-template-columns:repeat(4,1fr)}}
@@ -96,6 +101,18 @@ a{color:inherit}
 .cta:hover{background:var(--accent)}
 footer{border-top:1px solid var(--line);padding-block:2.5rem;font-size:.7rem;letter-spacing:.05em;color:var(--ink-2)}
 a:focus-visible,.cta:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wordmark img,.tb-logo img{height:auto;display:block}
+.logo-white{display:none}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .logo-ink{display:none}
+  :root:not([data-theme="light"]) .logo-white{display:block}
+}
+:root[data-theme="dark"] .logo-ink{display:none}
+:root[data-theme="dark"] .logo-white{display:block}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wordmark{line-height:0}
+.wordmark img{width:clamp(10rem,38vw,17rem)}
+.tb-logo img{width:6.5rem}
 </style>
 </head>
 <body>
@@ -104,7 +121,7 @@ a:focus-visible,.cta:focus-visible{outline:2px solid var(--accent);outline-offse
 <div class="topbar">
   <div class="wrap topbar-in">
     <span class="vbadge">Version A &middot; The Invitation</span>
-    <span class="tb-name">Ian Frood</span>
+    <span class="tb-logo"><img class="logo-ink" src="../images/logo-ink.png" width="436" height="121" alt="Ian Frood"><img class="logo-white" src="../images/logo-white.png" width="436" height="121" alt="" aria-hidden="true"></span>
     <span class="tb-item tb-addr">16 Network Drive, Port Melbourne VIC 3207</span>
     <a class="tb-item" href="tel:+61396997153">(03) 9699 7153</a>
     <a class="tb-item" href="mailto:info@ianfrood.com.au">info@ianfrood.com.au</a>
@@ -116,9 +133,13 @@ a:focus-visible,.cta:focus-visible{outline:2px solid var(--accent);outline-offse
   <div class="hero-grid">
     <div>
       <p class="eyebrow">Port Melbourne &middot; Est. Melbourne</p>
-      <h1 class="wordmark">Ian Frood</h1>
+      <h1 class="wordmark">
+      <span class="vh">Ian Frood</span>
+      <img class="logo-ink" src="../images/logo-ink.png" width="436" height="121" alt="Ian Frood">
+      <img class="logo-white" src="../images/logo-white.png" width="436" height="121" alt="" aria-hidden="true">
+    </h1>
       <p class="invite">Come and see what all the fuss is about.</p>
-      <p class="intro">Our studio is where the collections live — Jakob Schlaepfer's fabrics and wallcoverings, Buchheister hardware, and our own exclusive cloth, woven grasses and bamboos. Bring a project and we will find the wow for it.</p>
+      <p class="intro">Our studio is where the collections live — our own exclusive cloth, woven grasses and bamboos, alongside the European houses we represent. Bring a project and we will find the wow for it.</p>
       <ul class="tags">
         <li>Trade only</li>
         <li>By appointment</li>
@@ -136,16 +157,16 @@ a:focus-visible,.cta:focus-visible{outline:2px solid var(--accent);outline-offse
     <h2 class="sec-title">Hundreds of designs, and one or two that stop people.</h2>
     <div class="find">
       <article>
-        <h3>The Ian Frood collection</h3>
-        <p>Our own exclusive cloth — Woven Naturals in grasses, reeds and bamboo, a Japanese <em>sudare</em> range, grass cloths, and linens from Belgium and Italy.</p>
+        <h3>Our own collection</h3>
+        <p>Woven Naturals in grasses, reeds and bamboo, a Japanese <em>sudare</em> range, grass cloths, and linens from Belgium and Italy.</p>
       </article>
       <article>
-        <h3>Jakob Schlaepfer</h3>
-        <p>The St. Gallen atelier whose creations have graced the catwalks of leading fashion houses. Fabrics, wallcoverings and the annual Interior capsule. We are the Australian agents.</p>
+        <h3>Houses we represent</h3>
+        <p>Fabrics, wallcoverings, hardware and awnings from Jakob Schlaepfer, Buchheister, G P &amp; J Baker and Markilux &mdash; all held in the studio.</p>
       </article>
       <article>
-        <h3>Buchheister</h3>
-        <p>Curtain hardware made in Germany, including the Round series. Quiet engineering for cloth that deserves it.</p>
+        <h3>Made here</h3>
+        <p>Curtains, sheers and blinds, cut, sewn and finished by our crew in the Port Melbourne workroom.</p>
       </article>
     </div>
   </section>
@@ -156,7 +177,7 @@ a:focus-visible,.cta:focus-visible{outline:2px solid var(--accent);outline-offse
       <div>
         <p class="eyebrow">In the studio</p>
         <h2 class="sec-title">We love watching people react to this collection, as they would to art.</h2>
-        <p class="sec-body">Ian travels each year to Heimtextil, Maison &amp; Objet and Déco Off, and to St. Gallen to see how Schlaepfer's creations are made. What comes home goes on display in Port Melbourne, where we host presentations for practices and their teams.</p>
+        <p class="sec-body">Ian travels each year to Heimtextil, Maison &amp; Objet and Déco Off, and to the mills and ateliers of the houses we represent. What comes home goes on display in Port Melbourne, where we host presentations for practices and their teams.</p>
       </div>
     </div>
   </section>
