@@ -7,14 +7,11 @@
 <title>Ian Frood — Version B</title>
 
 <style>
-@font-face{font-family:'AdventPro';src:url('../fonts/advent-pro-300.woff2') format('woff2');font-weight:300;font-style:normal;font-display:swap}
-@font-face{font-family:'AdventPro';src:url('../fonts/advent-pro-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:'AdventPro';src:url('../fonts/advent-pro-500.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:'AdventPro';src:url('../fonts/advent-pro-italic-400.woff2') format('woff2');font-weight:400;font-style:italic;font-display:swap}
-:root{
+@font-face{font-family:'Geo';src:url('../fonts/jost.woff2') format('woff2');font-weight:300 500;font-style:normal;font-display:swap}
+@font-face{font-family:'Geo';src:url('../fonts/jost-italic.woff2') format('woff2');font-weight:300 500;font-style:italic;font-display:swap}:root{
   --paper:#141312; --paper-2:#1C1A18; --ink:#EFEDE8; --ink-2:#A29C93;
   --line:#33302B; --accent:#C9A468; --brass:#C9A468;
-  --brand:'AdventPro','Futura Classic',Futura,'Century Gothic','Segoe UI',system-ui,sans-serif;
+  --brand:'Geo','Futura Classic',Futura,'Century Gothic','Avenir Next',Avenir,'Segoe UI',system-ui,sans-serif;
 }
 :root[data-theme="light"]{
   --paper:#141312; --paper-2:#1C1A18; --ink:#EFEDE8; --ink-2:#A29C93;
@@ -22,17 +19,17 @@
 }
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);
-  font-family:var(--brand);
+  font-family:var(--brand);text-transform:lowercase;
   font-size:clamp(1rem,.96rem + .2vw,1.05rem);line-height:1.66;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 .topbar{border-bottom:1px solid var(--line);background:var(--paper);position:sticky;top:0;z-index:20}
 .topbar-in{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem 1.2rem;padding-block:.75rem;font-size:.8rem}
-.vbadge{background:var(--accent);color:var(--paper);font-size:.54rem;letter-spacing:.18em;text-transform:uppercase;padding:.28rem .6rem;white-space:nowrap}
-.tb-name{font-size:.66rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap}
+.vbadge{background:var(--accent);color:var(--paper);font-size:.54rem;letter-spacing:.18em;;padding:.28rem .6rem;white-space:nowrap}
+.tb-name{font-size:.66rem;font-weight:500;letter-spacing:.22em;;white-space:nowrap}
 .tb-item{color:var(--ink-2);text-decoration:none}
 a.tb-item{color:var(--ink);border-bottom:1px solid var(--line);white-space:nowrap}
 a.tb-item:hover{color:var(--accent);border-bottom-color:var(--accent)}
-.tb-status{margin-left:auto;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);white-space:nowrap}
+.tb-status{margin-left:auto;font-size:.6rem;letter-spacing:.2em;;color:var(--ink-2);white-space:nowrap}
 @media(max-width:56rem){
   /* not sticky on small screens - a 120px bar permanently on screen costs
      more than it gives. It stays at the top, it just scrolls away. */
@@ -46,11 +43,11 @@ a.tb-item:hover{color:var(--accent);border-bottom-color:var(--accent)}
   a.tb-item{order:3;padding-block:.6rem;display:inline-block}
 }
 .wrap{max-width:76rem;margin-inline:auto;padding-inline:clamp(1.5rem,5vw,4rem)}
-.eyebrow{margin:0;font-size:.62rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--accent)}
+.eyebrow{margin:0;font-size:.62rem;font-weight:600;letter-spacing:.3em;;color:var(--accent)}
 
 .masthead{padding-block:clamp(4.5rem,10vw,8rem) clamp(2.5rem,5vw,4rem);text-align:center}
 .wordmark{margin:1.5rem 0 0;font-weight:200;font-size:clamp(2.6rem,9vw,6rem);
-  line-height:1;letter-spacing:.16em;text-transform:uppercase}
+  line-height:1;letter-spacing:.16em;}
 .tagline{margin:1.5rem auto 0;max-width:40ch;color:var(--ink-2);font-size:1.02rem}
 .rule{height:1px;background:var(--line);margin-top:clamp(2.5rem,5vw,4rem)}
 
@@ -63,12 +60,12 @@ a.tb-item:hover{color:var(--accent);border-bottom-color:var(--accent)}
 }
 .coll img{width:100%;aspect-ratio:4/5;object-fit:cover}
 .coll.wide img{aspect-ratio:3/2}
-.coll .origin{margin:0 0 .55rem;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-2)}
+.coll .origin{margin:0 0 .55rem;font-size:.62rem;letter-spacing:.24em;;color:var(--ink-2)}
 .coll h2{margin:0;font-weight:400;font-size:clamp(1.6rem,3.8vw,2.5rem);line-height:1.08;
   font-family:var(--brand)}
 .coll p{margin:1.1rem 0 0;max-width:48ch;color:var(--ink-2)}
 .spec{margin:1.5rem 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.45rem .5rem}
-.spec li{border:1px solid var(--line);padding:.4rem .8rem;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+.spec li{border:1px solid var(--line);padding:.4rem .8rem;font-size:.66rem;letter-spacing:.14em;;color:var(--ink-2)}
 
 .made{padding-block:clamp(3.5rem,7vw,5.5rem);border-bottom:1px solid var(--line)}
 .made-grid{display:grid;gap:1.5rem 3rem;grid-template-columns:1fr;margin-top:2rem}
@@ -79,16 +76,16 @@ a.tb-item:hover{color:var(--accent);border-bottom-color:var(--accent)}
 
 .closing{padding-block:clamp(3.5rem,7vw,5.5rem)}
 .closing h2{margin:.9rem 0 0;font-weight:400;font-size:clamp(1.5rem,3.6vw,2.3rem);
-  font-family:var(--brand);max-width:24ch;line-height:1.14}
+  font-family:var(--brand);text-transform:lowercase;max-width:24ch;line-height:1.14}
 .contact{display:grid;gap:1.6rem 2.5rem;grid-template-columns:1fr 1fr;margin:2.25rem 0 0}
 @media(min-width:44rem){.contact{grid-template-columns:repeat(4,1fr)}}
-.contact dt{margin:0 0 .35rem;font-size:.6rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+.contact dt{margin:0 0 .35rem;font-size:.6rem;font-weight:600;letter-spacing:.22em;;color:var(--accent)}
 .contact dd{margin:0;font-size:.93rem;line-height:1.5;overflow-wrap:anywhere}
 a{color:inherit}
 .contact a{text-decoration:none;border-bottom:1px solid var(--line)}
 .contact a:hover{color:var(--accent);border-bottom-color:var(--accent)}
 .cta{display:inline-block;margin-top:2rem;padding:1rem 1.75rem;border:1px solid var(--accent);color:var(--accent);
-  text-decoration:none;font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase}
+  text-decoration:none;font-size:.68rem;font-weight:600;letter-spacing:.2em;}
 .cta:hover{background:var(--accent);color:var(--paper)}
 footer{border-top:1px solid var(--line);padding-block:2.5rem;font-size:.68rem;color:var(--ink-2)}
 a:focus-visible,.cta:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
@@ -104,6 +101,7 @@ a:focus-visible,.cta:focus-visible{outline:2px solid var(--accent);outline-offse
 .wordmark{line-height:0}
 .wordmark img{width:clamp(10rem,38vw,17rem)}
 .tb-logo img{width:6.5rem}
+body{text-transform:lowercase}
 </style>
 </head>
 <body>
