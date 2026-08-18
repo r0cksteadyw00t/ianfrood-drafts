@@ -111,6 +111,17 @@ a:focus-visible,.cta:focus-visible{outline:2px solid var(--accent);outline-offse
 .wordmark .logo-svg{width:clamp(11rem,40vw,18rem);height:auto;display:block;color:var(--ink)}
 .tb-logo .logo-svg-sm{width:6.5rem;height:auto;display:block;color:var(--ink)}
 body{text-transform:lowercase}
+
+/* ---- brand is black: single committed identity, not OS-dependent ---- */
+:root,
+:root:not([data-theme="light"]),
+:root[data-theme="light"],
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#000000; --paper-2:#121110; --ink:#EDEAE2; --ink-2:#9A948A;
+  --line:#33302B; --accent:#C9A469; --brass:#C9A469;
+}
+html,body{background:#000000;color:#EDEAE2}
 </style>
 </head>
 <body>
